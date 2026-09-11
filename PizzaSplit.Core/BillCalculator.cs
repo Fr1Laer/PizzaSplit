@@ -1,8 +1,8 @@
 ﻿namespace PizzaSplit.Core
 {
-    public class BillCalculator
+    public static class BillCalculator
     {
-        public double Calculate(int people, double amount, bool tips)
+        public static double Calculate(int people, double amount, bool tips)
         {
             if (tips)
             {

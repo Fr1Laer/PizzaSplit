@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaSplit.WpfApp"
         mc:Ignorable="d"
-        Title="Pizza Split" Height="299" Width="286">
+        Title="Pizza Split" Height="299" Width="276" SizeToContent="WidthAndHeight" ShowInTaskbar="False">
     <Grid>
-        <TextBox x:Name="PeopleTextBox" HorizontalAlignment="Left" Margin="39,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="24"/>
-        <Label Content="Input the number of people (1-20):" HorizontalAlignment="Left" Margin="39,8,0,0" VerticalAlignment="Top" Width="203"/>
-        <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="39,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="24"/>
-        <Label Content="Input amount (0 &lt; amount &lt;= 10000)" HorizontalAlignment="Left" Margin="39,80,0,0" VerticalAlignment="Top" Width="218"/>
-        <TextBox x:Name="ResultTextBox" HorizontalAlignment="Left" Margin="39,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="24" IsReadOnly="True"/>
-        <Label Content="Result" HorizontalAlignment="Left" Margin="39,208,0,0" VerticalAlignment="Top" Width="183"/>
-        <CheckBox x:Name="TipCheckBox" Content="Add 10% tip&#xD;&#xA;" HorizontalAlignment="Left" Margin="39,145,0,0" VerticalAlignment="Top"/>
-        <Button Content="Calculate" HorizontalAlignment="Left" Margin="39,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.442,-0.274" Width="101" Click="CalculateButton_click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="114*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="PeopleTextBox" HorizontalAlignment="Left" Margin="7,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="24" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label Content="Input the number of people (1-20):" HorizontalAlignment="Left" Margin="7,8,0,0" VerticalAlignment="Top" Width="221" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="7,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="24" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label Content="Input amount (0 &lt; amount &lt;= 10000):" HorizontalAlignment="Left" Margin="7,80,0,0" VerticalAlignment="Top" Width="241" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <TextBox x:Name="ResultTextBox" HorizontalAlignment="Left" Margin="7,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="24" IsReadOnly="True" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label Content="Result (€):" HorizontalAlignment="Left" Margin="7,208,0,0" VerticalAlignment="Top" Width="183" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <CheckBox x:Name="TipCheckBox" Content="Add 10% tip&#xD;&#xA;" HorizontalAlignment="Left" Margin="7,145,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Margin="7,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.442,-0.274" Width="101" Click="CalculateButton_click" Grid.Column="2"/>
 
     </Grid>
 </Window>

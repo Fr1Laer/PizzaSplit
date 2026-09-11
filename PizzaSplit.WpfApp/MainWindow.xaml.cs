@@ -23,7 +23,12 @@ namespace PizzaSplit.WpfApp
 
         private void CalculateButton_click(object sender, RoutedEventArgs e)
         {
-            
+            if (string.IsNullOrWhiteSpace(PeopleTextBox.Text))
+            {
+                MessageBox.Show("Please enter a number of people");
+                return;
+            }
+
             int people = int.Parse(PeopleTextBox.Text);
 
             if (people < 1 || people > 20)
@@ -32,8 +37,14 @@ namespace PizzaSplit.WpfApp
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(AmountTextBox.Text))
+            {
+                MessageBox.Show("Please enter an amount");
+                return;
+            }
+
             double amount = double.Parse(AmountTextBox.Text);
-            
+
             if (amount < 0 || amount >= 10000)
             {
                 MessageBox.Show("Max amount is 0 < amount <= 10000");
@@ -42,11 +53,9 @@ namespace PizzaSplit.WpfApp
 
             bool tips = TipCheckBox.IsChecked == true;
 
-            BillCalculator calculator = new BillCalculator();
+            double result = BillCalculator.Calculate(people, amount, tips);
 
-            double result = calculator.Calculate(people, amount, tips);
-
-            ResultTextBox.Text = result.ToString();
+            ResultTextBox.Text = result.ToString("F2");
         }
     }
 }
