@@ -21,6 +21,7 @@
         <Label Content="Result (€):" HorizontalAlignment="Left" Margin="7,208,0,0" VerticalAlignment="Top" Width="183" Grid.ColumnSpan="2" Grid.Column="2"/>
         <CheckBox x:Name="TipCheckBox" Content="Add 10% tip&#xD;&#xA;" HorizontalAlignment="Left" Margin="7,145,0,0" VerticalAlignment="Top" Grid.Column="2"/>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="7,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.442,-0.274" Width="101" Click="CalculateButton_click" Grid.Column="2"/>
+        <Button x:Name="ClearButton" Grid.Column="3" Content="Clear" HorizontalAlignment="Left" Margin="43,240,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.842,-0.049" Height="23" Width="54" Click="ClearButton_Click"/>
 
     </Grid>
 </Window>

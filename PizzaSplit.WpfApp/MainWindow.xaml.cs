@@ -29,7 +29,11 @@ namespace PizzaSplit.WpfApp
                 return;
             }
 
-            int people = int.Parse(PeopleTextBox.Text);
+            if (!int.TryParse(PeopleTextBox.Text, out int people))
+            {
+                MessageBox.Show("Please enter a valid number of people");
+                return;
+            }
 
             if (people < 1 || people > 20)
             {
@@ -43,7 +47,11 @@ namespace PizzaSplit.WpfApp
                 return;
             }
 
-            double amount = double.Parse(AmountTextBox.Text);
+            if (!double.TryParse(AmountTextBox.Text, out double amount))
+            {
+                MessageBox.Show("Please enter a valid amount");
+                return;
+            }
 
             if (amount < 0 || amount >= 10000)
             {
@@ -56,6 +64,18 @@ namespace PizzaSplit.WpfApp
             double result = BillCalculator.Calculate(people, amount, tips);
 
             ResultTextBox.Text = result.ToString("F2");
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            PeopleTextBox.Clear();
+            AmountTextBox.Clear();
+            ResultTextBox.Clear();
+
+            TipCheckBox.IsChecked = false;
+
+            ResultTextBox.Focus(); 
+
         }
     }
 }
