@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="PizzaSplit.ConsoleApp/PizzaSplit.ConsoleApp.csproj" Id="24a54ae7-347b-429f-82f7-0a2c0a700a52" />
   <Project Path="PizzaSplit.Core/PizzaSplit.Core.csproj" />
   <Project Path="PizzaSplit.WpfApp/PizzaSplit.WpfApp.csproj" />
 </Solution>
